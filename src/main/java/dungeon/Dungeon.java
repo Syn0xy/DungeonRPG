@@ -2,24 +2,14 @@ package dungeon;
 
 public class Dungeon {
 
-    private static final Theme[] THEMES = Theme.values();
-
     private DungeonFloor[] floors;
 
-    public Dungeon(){
-        generateFloors();
+    protected Dungeon(DungeonFloor[] floors){
+        this.floors = floors;
     }
 
-    public DungeonFloor[] getFloors() {
-        return floors;
-    }
-
-    private void generateFloors(){
-        floors = new DungeonFloor[THEMES.length];
-        
-        for (int i = 0; i < floors.length; i++) {
-            floors[i] = new DungeonFloor(THEMES[i]);
-        }
+    public DungeonFloor getFloor(int floor) {
+        return floors[floor];
     }
 
     public void print(){

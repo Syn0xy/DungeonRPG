@@ -2,12 +2,21 @@ package dungeon;
 
 public class DungeonRoom {
     
-    protected Vector2 position;
-    protected RoomType type;
+    private Vector2 position;
+
+    private RoomType type;
 
     protected DungeonRoom(Vector2 position, RoomType type){
         this.position = position;
         this.type = type;
+    }
+    
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public RoomType getType() {
+        return type;
     }
 
     protected void print(){
